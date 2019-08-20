@@ -1,0 +1,53 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.badge {
+  border-radius: 100% !important;
+  background-color: #00A8A8 !important;
+}
+.label {
+  padding-left: 1em;
+  padding-right: 1em;
+  border-radius: 0;
+  font-weight: 300;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.label-danger {
+  background-color: #f04124;
+}
+
+.label-success {
+  background-color: $success;
+}
+
+.pointer-on-hover:hover {
+  cursor: pointer;
+  background: #dcdee0 !important;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: bold;
+}
+
+.active a{
+  background: #141a20 !important;
+}
+
+.nav-link {
+  padding: .8rem 1.1rem !important;
+  &:hover {
+    background: #141a20 !important;
+  }
+}
+
+.navbar {
+  padding: 0;
+}
