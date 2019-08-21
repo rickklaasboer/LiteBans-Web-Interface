@@ -14,7 +14,10 @@ class BanController extends Controller
      */
     public function index()
     {
-        return view('bans.index');
+        $bans = DB::table('litebans_bans')->paginate(15);
+
+        return view('bans.index')
+            ->with('bans', $bans);
     }
 
     /**

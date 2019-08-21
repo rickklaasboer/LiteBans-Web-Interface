@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class WarningController extends Controller
 {
@@ -13,7 +14,10 @@ class WarningController extends Controller
      */
     public function index()
     {
-        return view('warnings.index');
+        $warnings = DB::table('litebans_warnings')->paginate(15);
+
+        return view('warnings.index')
+            ->with('warnings', $warnings);
     }
 
     /**

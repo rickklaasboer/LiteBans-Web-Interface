@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class KickController extends Controller
 {
@@ -13,7 +14,10 @@ class KickController extends Controller
      */
     public function index()
     {
-        return view('kicks.index');
+        $kicks = DB::table('litebans_kicks')->paginate(15);
+
+        return view('kicks.index')
+            ->with('kicks', $kicks);
     }
 
     /**

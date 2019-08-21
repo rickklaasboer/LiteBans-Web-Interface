@@ -15,16 +15,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $bans = DB::table('litebans_bans')->get()->sortByDesc('time');
-        $kicks = DB::table('litebans_kicks')->get()->sortByDesc('time');
-        $warnings = DB::table('litebans_warnings')->get()->sortByDesc('time');
-        $mutes = DB::table('litebans_mutes')->get()->sortByDesc('time');
+        $bans = DB::table('litebans_bans')->get()->count();
+        $kicks = DB::table('litebans_kicks')->get()->count();
+        $warnings = DB::table('litebans_warnings')->get()->count();
+        $mutes = DB::table('litebans_mutes')->get()->count();
 
         View::share([
-            'bans' => $bans,
-            'kicks' => $kicks,
-            'warnings' => $warnings,
-            'mutes' => $mutes
+            'banscount' => $bans,
+            'kickscount' => $kicks,
+            'warningscount' => $warnings,
+            'mutescount' => $mutes
         ]);
     }
 

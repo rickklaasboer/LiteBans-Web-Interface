@@ -1,11 +1,11 @@
 @extends('layout.app')
 
-@section('title', 'Home')
+@section('title', 'All Bans')
 
 @section('content')
 
     <div class="jumbotron text-center">
-        <h2>Bans <span class="badge text-white">{{ $bans->count() }}</span></h2>
+        <h2>Bans <span class="badge text-white">{{ $banscount }}</span></h2>
     </div>
 
     <div class="container">
@@ -20,7 +20,7 @@
             </tr>
             </thead>
             <tbody>
-            @foreach($bans as $ban)
+            @foreach($bans->reverse() as $ban)
                 <tr class="pointer-on-hover" onclick="window.location.href='/ban/{{ $ban->id }}'">
                     <td><img style="width: 24px;" src="https://crafatar.com/avatars/{{ $ban->uuid }}" alt=""> <a
                                 href="{{ url("/history/{$ban->uuid}") }}">{{ uuid_to_username($ban->uuid) }}</a></td>
@@ -33,6 +33,10 @@
             @endforeach
             </tbody>
         </table>
+
+
+        {{ $bans->links() }}
+
     </div>
 
 @endsection

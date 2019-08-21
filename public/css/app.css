@@ -10696,3 +10696,7 @@ h6 {
   padding: 0;
 }
 
+.pagination {
+  justify-content: center;
+}
+

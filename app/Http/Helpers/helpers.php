@@ -13,7 +13,7 @@ if (!function_exists('uuid_to_username')) {
 if (!function_exists('username_to_uuid')) {
     function username_to_uuid($name) {
         try {
-            return DB::table('litebans_history')->where('name', '=', $name)->first()->uuid;
+            return DB::table('litebans_history')->where('name', 'LIKE', "%{$name}%")->first()->uuid;
         } catch (Exception $e) {
             return false;
         }

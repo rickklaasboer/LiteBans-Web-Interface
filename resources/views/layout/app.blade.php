@@ -27,16 +27,16 @@
                     <a class="nav-link" href="{{ url('/') }}">Home</a>
                 </li>
                 <li class="nav-item @if(request()->routeIs('ban.*')) active @endif">
-                    <a class="nav-link" href="{{ url('/bans') }}">Bans <span class="badge">{{ $bans->count() }}</span></a>
+                    <a class="nav-link" href="{{ url('/bans') }}">Bans <span class="badge">{{ $banscount }}</span></a>
                 </li>
                 <li class="nav-item @if(request()->routeIs('kick.*')) active @endif">
-                    <a class="nav-link" href="{{ url('/kicks') }}">Kicks <span class="badge">{{ $kicks->count() }}</span></a>
+                    <a class="nav-link" href="{{ url('/kicks') }}">Kicks <span class="badge">{{ $kickscount }}</span></a>
                 </li>
                 <li class="nav-item @if(request()->routeIs('warning.*')) active @endif">
-                    <a class="nav-link" href="{{ url('/warnings') }}">Warnings <span class="badge">{{ $warnings->count() }}</span></a>
+                    <a class="nav-link" href="{{ url('/warnings') }}">Warnings <span class="badge">{{ $warningscount }}</span></a>
                 </li>
                 <li class="nav-item @if(request()->routeIs('mute.*')) active @endif">
-                    <a class="nav-link" href="{{ url('/mutes') }}">Mutes <span class="badge">{{ $mutes->count() }}</span></a>
+                    <a class="nav-link" href="{{ url('/mutes') }}">Mutes <span class="badge">{{ $mutescount }}</span></a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">

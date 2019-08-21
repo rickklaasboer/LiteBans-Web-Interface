@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MuteController extends Controller
 {
@@ -13,7 +14,10 @@ class MuteController extends Controller
      */
     public function index()
     {
-        return view('mutes.index');
+        $mutes = DB::table('litebans_mutes')->paginate(15);
+
+        return view('mutes.index')
+            ->with('mutes', $mutes);
     }
 
     /**
