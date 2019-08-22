@@ -28,6 +28,16 @@ class WarningController extends Controller
      */
     public function show($id)
     {
-        return view('warnings.show');
+        $warning = DB::table('litebans_warnings')->where('id', '=', $id)->first();
+
+        if (empty($warning)) {
+            abort(404);
+        }
+
+        $username = uuid_to_username($warning->uuid);
+
+        return view('warnings.show')
+            ->with('warning', $warning)
+            ->with('username', $username);
     }
 }

@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700&display=swap);@charset "UTF-8";
 
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
@@ -10644,9 +10644,18 @@ a.text-dark:focus {
   }
 }
 
+html,
+body {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
 .badge {
   border-radius: 100% !important;
-  background-color: #00A8A8 !important;
+  background-color: #2b2692 !important;
+}
+
+.bg-blue {
+  background: #0e4ecc;
 }
 
 .label {
@@ -10681,7 +10690,7 @@ h6 {
 }
 
 .active a {
-  background: #141a20 !important;
+  background: #1540ba !important;
 }
 
 .nav-link {
@@ -10689,7 +10698,7 @@ h6 {
 }
 
 .nav-link:hover {
-  background: #141a20 !important;
+  background: #1540ba !important;
 }
 
 .navbar {

@@ -28,6 +28,16 @@ class MuteController extends Controller
      */
     public function show($id)
     {
-        return view('mutes.show');
+        $mute = DB::table('litebans_mutes')->where('id', '=', $id)->first();
+
+        if (empty($mute)) {
+            abort(404);
+        }
+
+        $username = uuid_to_username($mute->uuid);
+
+        return view('mutes.show')
+            ->with('username', $username)
+            ->with('mute', $mute);
     }
 }

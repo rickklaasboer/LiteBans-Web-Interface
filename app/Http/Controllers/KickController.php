@@ -28,6 +28,16 @@ class KickController extends Controller
      */
     public function show($id)
     {
-        return view('kicks.show');
+        $kick = DB::table('litebans_kicks')->where('id', '=', $id)->first();
+
+        if (empty($kick)) {
+            abort(404);
+        }
+
+        $username = uuid_to_username($kick->uuid);
+
+        return view('kicks.show')
+            ->with('username', $username)
+            ->with('kick', $kick);
     }
 }

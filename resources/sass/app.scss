@@ -1,5 +1,6 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700&display=swap');
 
 // Variables
 @import 'variables';
@@ -7,10 +8,19 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+html,body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
 .badge {
   border-radius: 100% !important;
-  background-color: #00A8A8 !important;
+  background-color: #2b2692 !important;
 }
+
+.bg-blue {
+  background: #0e4ecc;
+}
+
 .label {
   padding-left: 1em;
   padding-right: 1em;
@@ -38,13 +48,13 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .active a{
-  background: #141a20 !important;
+  background: #1540ba !important;
 }
 
 .nav-link {
   padding: .8rem 1.1rem !important;
   &:hover {
-    background: #141a20 !important;
+    background: #1540ba !important;
   }
 }
 
@@ -55,3 +65,4 @@ h1,h2,h3,h4,h5,h6 {
 .pagination {
   justify-content: center;
 }
+

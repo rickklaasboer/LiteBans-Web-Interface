@@ -30,8 +30,14 @@ class BanController extends Controller
     {
         $ban = DB::table('litebans_bans')->where('id', '=', $id)->first();
 
+        if (empty($ban)) {
+            abort(404);
+        }
+
         $username = uuid_to_username($ban->uuid);
 
-        return view('bans.show')->with('ban', $ban)->with('username', $username);
+        return view('bans.show')
+            ->with('ban', $ban)
+            ->with('username', $username);
     }
 }
